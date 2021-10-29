@@ -5,7 +5,8 @@ public class Length {
 	private final double value;
 	private final Unit unit;
 
-	private static final double FEET_INCH_MULTIPLIER = 12;
+	private static final double FEET_INCH = 12;
+	private static final double YARD_FEET = 3;
 	
 	enum Unit {
 		Feet, Inch, Yard , Null
@@ -33,9 +34,14 @@ public class Length {
 	public boolean compare(Length obj) {
 		if (this.unit.equals(obj.unit))
 			return Double.compare(this.value, obj.value) == 0;
-		if (this.unit.equals(Unit.Feet) && obj.unit.equals(Unit.Inch))
-			return Double.compare(Math.round(this.value * FEET_INCH_MULTIPLIER), obj.value) == 0
-					|| Double.compare(Math.round(this.value / FEET_INCH_MULTIPLIER), obj.value) == 0;
+		if(this.unit.equals(Unit.Feet) && obj.unit.equals(Unit.Inch))
+            return Double.compare(Math.round(this.value* FEET_INCH),obj.value) == 0;
+        if(this.unit.equals(Unit.Inch) && obj.unit.equals(Unit.Feet))
+            return Double.compare(this.value,Math.round(obj.value* FEET_INCH)) == 0;
+        if(this.unit.equals(Unit.Yard) && obj.unit.equals(Unit.Feet))
+            return Double.compare(Math.round(this.value* YARD_FEET),obj.value) == 0;
+        if(this.unit.equals(Unit.Feet) && obj.unit.equals(Unit.Yard))
+            return Double.compare(this.value,Math.round(obj.value* YARD_FEET)) == 0;
 		return false;
 	}
 
