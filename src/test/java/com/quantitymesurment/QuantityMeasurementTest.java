@@ -72,7 +72,7 @@ public class QuantityMeasurementTest {
 		boolean compareCheck = yards.compare(feet);
 		Assert.assertTrue(compareCheck);
 	}
-	
+
 	@Test
 	public void given1FeetAnd1Yard_ShouldReturnNotEqualsLength() {
 		Length yards = new Length(Length.Unit.Yard, 1.0);
@@ -87,6 +87,30 @@ public class QuantityMeasurementTest {
 		Length feet = new Length(Length.Unit.Feet, 1.0);
 		boolean compareCheck = yards.compare(feet);
 		Assert.assertTrue(compareCheck);
+	}
+
+	@Test
+	public void given1YardsAnd36Inch_ShouldReturnEqualLength() {
+		Length yards = new Length(Length.Unit.Yard, 1.0);
+		Length feet = new Length(Length.Unit.Inch, 36.0);
+		boolean compareCheck = yards.compare(feet);
+		Assert.assertTrue(compareCheck);
+	}
+
+	@Test
+	public void given1InchAndEquivalentYardsValue_ShouldReturnEqualLength() {
+		Length feet = new Length(Length.Unit.Inch, 1.0);
+		Length yards = new Length(Length.Unit.Yard, 0.0277);
+		boolean compareCheck = feet.compare(yards);
+		Assert.assertTrue(compareCheck);
+	}
+
+	@Test
+	public void given1InchAnd1Yard_ShouldReturnNotEqualsLength() {
+		Length yards = new Length(Length.Unit.Yard, 1.0);
+		Length inch = new Length(Length.Unit.Inch, 1.0);
+		boolean compareCheck = inch.compare(yards);
+		Assert.assertFalse(compareCheck);
 	}
 
 }

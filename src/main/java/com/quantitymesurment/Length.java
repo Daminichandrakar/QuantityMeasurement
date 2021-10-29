@@ -7,9 +7,10 @@ public class Length {
 
 	private static final double FEET_INCH = 12;
 	private static final double YARD_FEET = 3;
-	
+	private static final double YARD_INCH = 36;
+
 	enum Unit {
-		Feet, Inch, Yard , Null
+		Feet, Inch, Yard, Null
 	};
 
 	public Length(Unit unit, double value) {
@@ -30,18 +31,22 @@ public class Length {
 		return Double.compare(length.value, value) == 0 && unit == length.unit;
 	}
 
-	
 	public boolean compare(Length obj) {
 		if (this.unit.equals(obj.unit))
 			return Double.compare(this.value, obj.value) == 0;
-		if(this.unit.equals(Unit.Feet) && obj.unit.equals(Unit.Inch))
-            return Double.compare(Math.round(this.value* FEET_INCH),obj.value) == 0;
-        if(this.unit.equals(Unit.Inch) && obj.unit.equals(Unit.Feet))
-            return Double.compare(this.value,Math.round(obj.value* FEET_INCH)) == 0;
-        if(this.unit.equals(Unit.Yard) && obj.unit.equals(Unit.Feet))
-            return Double.compare(Math.round(this.value* YARD_FEET),obj.value) == 0;
-        if(this.unit.equals(Unit.Feet) && obj.unit.equals(Unit.Yard))
-            return Double.compare(this.value,Math.round(obj.value* YARD_FEET)) == 0;
+		if (this.unit.equals(Unit.Feet) && obj.unit.equals(Unit.Inch))
+			return Double.compare(Math.round(this.value * FEET_INCH), obj.value) == 0;
+		if (this.unit.equals(Unit.Inch) && obj.unit.equals(Unit.Feet))
+			return Double.compare(this.value, Math.round(obj.value * FEET_INCH)) == 0;
+		if (this.unit.equals(Unit.Yard) && obj.unit.equals(Unit.Feet))
+			return Double.compare(Math.round(this.value * YARD_FEET), obj.value) == 0;
+		if (this.unit.equals(Unit.Feet) && obj.unit.equals(Unit.Yard))
+			return Double.compare(this.value, Math.round(obj.value * YARD_FEET)) == 0;
+		if (this.unit.equals(Unit.Yard) && obj.unit.equals(Unit.Inch))
+			return Double.compare(Math.round(this.value * YARD_INCH), obj.value) == 0;
+		if (this.unit.equals(Unit.Inch) && obj.unit.equals(Unit.Yard))
+			return Double.compare(this.value, Math.round(obj.value * YARD_INCH)) == 0;
+
 		return false;
 	}
 
