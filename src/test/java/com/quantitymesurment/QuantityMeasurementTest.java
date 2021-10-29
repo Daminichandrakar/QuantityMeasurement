@@ -49,4 +49,20 @@ public class QuantityMeasurementTest {
 		Assert.assertEquals(false, result);
 	}
 
+	@Test
+	public void given1FeetAnd12Inch_ShouldreturnEqualLength() {
+		Length feet1 = new Length(Length.Unit.Feet, 1.0);
+		Length inch1 = new Length(Length.Unit.Inch, 12.0);
+		boolean compareCheck = feet1.compare(inch1);
+		Assert.assertTrue(compareCheck);
+	}
+
+	@Test
+	public void givenFeetAndInch_ShouldreturnEqualLength() {
+		Length feet1 = new Length(Length.Unit.Feet, 0.083);
+		Length inch1 = new Length(Length.Unit.Inch, 1.0);
+		boolean compareCheck = feet1.compare(inch1);
+		Assert.assertTrue(compareCheck);
+	}
+
 }
