@@ -1,13 +1,16 @@
 package com.quantitymesurment;
 
-/**
- * declaring the Feet class to call value
- */
-public class Feet {
+public class Length {
 
 	private final double value;
+	private final Unit unit;
 
-	public Feet(double value) {
+	enum Unit {
+		Feet, Inch,Null
+	};
+
+	public Length(Unit unit, double value) {
+		this.unit = unit;
 		this.value = value;
 	}
 
@@ -19,12 +22,12 @@ public class Feet {
 		if (obj == null || getClass() != obj.getClass())
 			return false;
 		// type cast object to Feet to compare the data members
-		Feet feet = (Feet) obj;
+		Length length = (Length) obj;
 		// compare data member
-		return Double.compare(feet.value, value) == 0;
+		return Double.compare(length.value, value) == 0 && unit == length.unit;
 	}
 
-	//override the hashCode method
+	// override the hashCode method
 	@Override
 	public int hashCode() {
 		return (int) this.value;
