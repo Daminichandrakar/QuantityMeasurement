@@ -25,12 +25,6 @@ public enum LengthComparision {
 	 * @return boolean
 	 */
 	public boolean compare(QuantityMeasurement converter1, QuantityMeasurement converter2) {
-		System.out.println(converter1.value);
-		System.out.println(converter2.value);
-		System.out.println(Math.round(converter1.value * converter1.lengthComparision.baseUnit));
-		System.out.println(Math.round(converter2.value * converter2.lengthComparision.baseUnit));
-		System.out.println(Double.compare(Math.round(converter1.value * converter1.lengthComparision.baseUnit),
-				Math.round(converter2.value * converter2.lengthComparision.baseUnit)));
 		return (Double.compare(Math.round(converter1.value * converter1.lengthComparision.baseUnit),
 				Math.round(converter2.value * converter2.lengthComparision.baseUnit)) == 0);
 	}

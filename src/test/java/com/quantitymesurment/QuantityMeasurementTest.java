@@ -206,5 +206,12 @@ public class QuantityMeasurementTest {
 		QuantityMeasurement centimeter2 = new QuantityMeasurement(LengthComparision.CENTIMETER, 0.0);
 		Assert.assertEquals(centimeter1, centimeter2);
 	}
+	
+	@Test
+	public void given0CentimeterAnd1Centimeter_WhenCompare_ShouldNotEqual() {
+		QuantityMeasurement centimeter1 = new QuantityMeasurement(LengthComparision.CENTIMETER, 0.0);
+		QuantityMeasurement centimeter2 = new QuantityMeasurement(LengthComparision.CENTIMETER, 1.0);
+		Assert.assertNotEquals(centimeter1, centimeter2);
+	}
 
 }
