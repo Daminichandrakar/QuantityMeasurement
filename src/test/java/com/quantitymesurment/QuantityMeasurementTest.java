@@ -118,8 +118,8 @@ public class QuantityMeasurementTest {
 
 	@Test
 	public void given12InchAnd1Feet_WhenCompared_ShouldReturnEqualQuantityMeasurement() {
-		QuantityMeasurement feet = new QuantityMeasurement(LengthComparision.FEET,0.083);
-		QuantityMeasurement inch = new QuantityMeasurement(LengthComparision.INCH,1.0);
+		QuantityMeasurement feet = new QuantityMeasurement(LengthComparision.FEET, 0.083);
+		QuantityMeasurement inch = new QuantityMeasurement(LengthComparision.INCH, 1.0);
 		Assert.assertTrue(feet.compare(feet, inch));
 	}
 
@@ -199,12 +199,12 @@ public class QuantityMeasurementTest {
 		QuantityMeasurement feet = new QuantityMeasurement(LengthComparision.FEET, 3.0);
 		Assert.assertTrue(yard.compare(yard, feet));
 	}
-	
+
 	@Test
 	public void given0CentimeterAnd0Centimeter_WhenCompare_ShouldEqual() {
 		QuantityMeasurement centimeter1 = new QuantityMeasurement(LengthComparision.CENTIMETER, 0.0);
 		QuantityMeasurement centimeter2 = new QuantityMeasurement(LengthComparision.CENTIMETER, 0.0);
-		Assert.assertEquals(centimeter1,centimeter2);
+		Assert.assertEquals(centimeter1, centimeter2);
 	}
-	
+
 }
