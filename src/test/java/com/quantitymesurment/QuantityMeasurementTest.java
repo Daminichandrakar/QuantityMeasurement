@@ -227,5 +227,12 @@ public class QuantityMeasurementTest {
 		QuantityMeasurement centimeter2 = new QuantityMeasurement(LengthComparision.CENTIMETER, 1.0);
 		Assert.assertEquals(centimeter1.getClass(), centimeter2.getClass());
 	}
+	
+	@Test
+	public void given2InchAnd5Centimeter_WhenCompare_ShouldEqual() {
+		QuantityMeasurement inch = new QuantityMeasurement(LengthComparision.INCH, 2.0);
+		QuantityMeasurement centimeter = new QuantityMeasurement(LengthComparision.CENTIMETER, 5.0);
+		Assert.assertTrue(inch.compare(inch, centimeter));
+	}
 
 }
