@@ -206,32 +206,39 @@ public class QuantityMeasurementTest {
 		QuantityMeasurement centimeter2 = new QuantityMeasurement(LengthComparision.CENTIMETER, 0.0);
 		Assert.assertEquals(centimeter1, centimeter2);
 	}
-	
+
 	@Test
 	public void given0CentimeterAnd1Centimeter_WhenCompare_ShouldNotEqual() {
 		QuantityMeasurement centimeter1 = new QuantityMeasurement(LengthComparision.CENTIMETER, 0.0);
 		QuantityMeasurement centimeter2 = new QuantityMeasurement(LengthComparision.CENTIMETER, 1.0);
 		Assert.assertNotEquals(centimeter1, centimeter2);
 	}
-	
+
 	@Test
 	public void given0CentimeterAndNull_WhenCompare_ShouldNotEqual() {
 		QuantityMeasurement centimeter1 = new QuantityMeasurement(LengthComparision.CENTIMETER, 0.0);
 		QuantityMeasurement centimeter2 = null;
 		Assert.assertNotEquals(centimeter1, centimeter2);
 	}
-	
+
 	@Test
 	public void givenType0CentimeterAndNull_WhenCompare_ShouldEqual() {
 		QuantityMeasurement centimeter1 = new QuantityMeasurement(LengthComparision.CENTIMETER, 0.0);
 		QuantityMeasurement centimeter2 = new QuantityMeasurement(LengthComparision.CENTIMETER, 1.0);
 		Assert.assertEquals(centimeter1.getClass(), centimeter2.getClass());
 	}
-	
+
 	@Test
-	public void given2InchAnd5Centimeter_WhenCompare_ShouldEqual() {
+	public void given2InchAnd5Centimeter_WhenCompare_ShouldReturnTrue() {
 		QuantityMeasurement inch = new QuantityMeasurement(LengthComparision.INCH, 2.0);
 		QuantityMeasurement centimeter = new QuantityMeasurement(LengthComparision.CENTIMETER, 5.0);
+		Assert.assertTrue(inch.compare(inch, centimeter));
+	}
+
+	@Test
+	public void givenInchAnd1Centimeter_WhenCompare_ShouldReturnTrue() {
+		QuantityMeasurement inch = new QuantityMeasurement(LengthComparision.INCH, 0.39);
+		QuantityMeasurement centimeter = new QuantityMeasurement(LengthComparision.CENTIMETER, 1.0);
 		Assert.assertTrue(inch.compare(inch, centimeter));
 	}
 
