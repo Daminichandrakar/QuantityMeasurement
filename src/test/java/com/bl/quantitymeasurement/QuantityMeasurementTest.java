@@ -564,4 +564,36 @@ public class QuantityMeasurementTest {
 		Assert.assertEquals(tonne1.getClass(), tonne2.getClass());
 	}
 
+	@Test
+	public void given1KilogramAnd1000Gram_WhenCompared_ShouldReturnEqualWeight() {
+		QuantityMeasurement kilogram = new QuantityMeasurement(Weight.KILOGRAM, 1.0);
+		QuantityMeasurement gram = new QuantityMeasurement(Weight.GRAM, 1000.0);
+		boolean compareCheck = kilogram.compare(gram);
+		Assert.assertTrue(compareCheck);
+	}
+
+	@Test
+	public void given1000GramAnd1Kilogram_WhenCompared_ShouldReturnEqualWeight() {
+		QuantityMeasurement gram = new QuantityMeasurement(Weight.GRAM, 1000.0);
+		QuantityMeasurement kilogram = new QuantityMeasurement(Weight.KILOGRAM, 1.0);
+		boolean compareCheck = gram.compare(kilogram);
+		Assert.assertTrue(compareCheck);
+	}
+
+	@Test
+	public void given1TonneAnd1000Kilogram_WhenCompared_ShouldReturnEqualWeight() {
+		QuantityMeasurement tonne = new QuantityMeasurement(Weight.TONNE, 1.0);
+		QuantityMeasurement kilogram = new QuantityMeasurement(Weight.KILOGRAM, 1000.0);
+		boolean compareCheck = tonne.compare(kilogram);
+		Assert.assertTrue(compareCheck);
+	}
+
+	@Test
+	public void given1000KilogramAnd1Tonne_WhenCompared_ShouldReturnEqualWeight() {
+		QuantityMeasurement kilogram = new QuantityMeasurement(Weight.KILOGRAM, 1000.0);
+		QuantityMeasurement tonne = new QuantityMeasurement(Weight.TONNE, 1.0);
+		boolean compareCheck = kilogram.compare(tonne);
+		Assert.assertTrue(compareCheck);
+	}
+
 }
