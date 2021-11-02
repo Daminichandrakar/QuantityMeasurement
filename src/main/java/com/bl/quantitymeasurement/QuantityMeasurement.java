@@ -26,6 +26,8 @@ public class QuantityMeasurement {
 	 * @return boolean
 	 */
 	public boolean compare(QuantityMeasurement converter1) {
+		System.out.println(this.lengthComparision.convertToBaseUnit(this.value));
+		System.out.println(converter1.lengthComparision.convertToBaseUnit(converter1.value));
 		return (Double.compare(this.lengthComparision.convertToBaseUnit(this.value),
 				converter1.lengthComparision.convertToBaseUnit(converter1.value)) == 0);
 	}
