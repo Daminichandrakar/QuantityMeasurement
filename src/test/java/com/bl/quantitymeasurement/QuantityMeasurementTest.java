@@ -596,4 +596,13 @@ public class QuantityMeasurementTest {
 		Assert.assertTrue(compareCheck);
 	}
 
+	@Test
+	public void given1TonneAnd1000Gram_WhenAdded_ShouldReturn1001Kilogram() {
+		QuantityMeasurement litre = new QuantityMeasurement(Weight.TONNE, 1.0);
+		QuantityMeasurement millilitre = new QuantityMeasurement(Weight.GRAM, 1000.0);
+		double actualValue = litre.addition(millilitre);
+		QuantityMeasurement qMeasurement = new QuantityMeasurement(Weight.KILOGRAM, 1001.0);
+		double expected = qMeasurement.value;
+		Assert.assertEquals(actualValue, expected, 0.0);
+	}
 }
