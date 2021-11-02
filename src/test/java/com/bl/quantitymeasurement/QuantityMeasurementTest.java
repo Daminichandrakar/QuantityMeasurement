@@ -458,4 +458,110 @@ public class QuantityMeasurementTest {
 		double expected = qMeasurement.value;
 		Assert.assertEquals(actualValue, expected, 0.0);
 	}
+
+	@Test
+	public void given0GramAnd0Gram_ShouldReturnEqual() {
+		QuantityMeasurement gram1 = new QuantityMeasurement(Weight.GRAM, 0.0);
+		QuantityMeasurement gram2 = new QuantityMeasurement(Weight.GRAM, 0.0);
+		Assert.assertEquals(gram1, gram2);
+	}
+
+	@Test
+	public void givenValue0GramAnd1Gram_ShouldReturnNotEqual() {
+		QuantityMeasurement gram1 = new QuantityMeasurement(Weight.GRAM, 0.0);
+		QuantityMeasurement gram2 = new QuantityMeasurement(Weight.GRAM, 1.0);
+		Assert.assertNotEquals(gram1, gram2);
+	}
+
+	@Test
+	public void given0GramAndNullGram_ShouldReturnNotEqual() {
+		QuantityMeasurement gram1 = new QuantityMeasurement(Weight.GRAM, 0.0);
+		QuantityMeasurement gram2 = null;
+		Assert.assertNotEquals(gram1, gram2);
+	}
+
+	@Test
+	public void givenReference0GramAnd1Gram_ShouldReturnNotEqual() {
+		QuantityMeasurement gram1 = new QuantityMeasurement(Weight.GRAM, 0.0);
+		QuantityMeasurement gram2 = new QuantityMeasurement(Weight.GRAM, 1.0);
+		Assert.assertNotEquals(gram1, gram2);
+	}
+
+	@Test
+	public void givenType0GramAnd1Gram_ShouldReturnEqual() {
+		QuantityMeasurement gram1 = new QuantityMeasurement(Weight.GRAM, 0.0);
+		QuantityMeasurement gram2 = new QuantityMeasurement(Weight.GRAM, 1.0);
+		Assert.assertEquals(gram1.getClass(), gram2.getClass());
+	}
+
+	@Test
+	public void given0KilogramAnd0Kilogram_ShouldReturnEqual() {
+		QuantityMeasurement kilogram1 = new QuantityMeasurement(Weight.KILOGRAM, 0.0);
+		QuantityMeasurement kilogram2 = new QuantityMeasurement(Weight.KILOGRAM, 0.0);
+		Assert.assertEquals(kilogram1, kilogram2);
+	}
+
+	@Test
+	public void givenValue0KilogramAnd1Kilogram_ShouldReturnNotEqual() {
+		QuantityMeasurement kilogram1 = new QuantityMeasurement(Weight.KILOGRAM, 0.0);
+		QuantityMeasurement kilogram2 = new QuantityMeasurement(Weight.KILOGRAM, 1.0);
+		Assert.assertNotEquals(kilogram1, kilogram2);
+	}
+
+	@Test
+	public void given0KilogramAndNullKilogram_ShouldReturnNotEqual() {
+		QuantityMeasurement kilogram1 = new QuantityMeasurement(Weight.KILOGRAM, 0.0);
+		QuantityMeasurement kilogram2 = null;
+		Assert.assertNotEquals(kilogram1, kilogram2);
+	}
+
+	@Test
+	public void givenReference0KilogramAnd1Kilogram_ShouldReturnNotEqual() {
+		QuantityMeasurement kilogram1 = new QuantityMeasurement(Weight.KILOGRAM, 0.0);
+		QuantityMeasurement kilogram2 = new QuantityMeasurement(Weight.KILOGRAM, 1.0);
+		Assert.assertNotEquals(kilogram1, kilogram2);
+	}
+
+	@Test
+	public void givenType0KilogramAnd1Kilogram_ShouldReturnEqual() {
+		QuantityMeasurement kilogram1 = new QuantityMeasurement(Weight.KILOGRAM, 0.0);
+		QuantityMeasurement kilogram2 = new QuantityMeasurement(Weight.KILOGRAM, 1.0);
+		Assert.assertEquals(kilogram1.getClass(), kilogram2.getClass());
+	}
+
+	@Test
+	public void given0TonneAnd0Tonne_ShouldReturnEqual() {
+		QuantityMeasurement tonne1 = new QuantityMeasurement(Weight.TONNE, 0.0);
+		QuantityMeasurement tonne2 = new QuantityMeasurement(Weight.TONNE, 0.0);
+		Assert.assertEquals(tonne1, tonne2);
+	}
+
+	@Test
+	public void givenValue0TonneAnd1Tonne_ShouldReturnNotEqual() {
+		QuantityMeasurement tonne1 = new QuantityMeasurement(Weight.TONNE, 0.0);
+		QuantityMeasurement tonne2 = new QuantityMeasurement(Weight.TONNE, 1.0);
+		Assert.assertNotEquals(tonne1, tonne2);
+	}
+
+	@Test
+	public void given0TonneAndNullTonne_ShouldReturnNotEqual() {
+		QuantityMeasurement tonne1 = new QuantityMeasurement(Weight.TONNE, 0.0);
+		QuantityMeasurement tonne2 = null;
+		Assert.assertNotEquals(tonne1, tonne2);
+	}
+
+	@Test
+	public void givenReference0TonneAnd1Tonne_ShouldReturnNotEqual() {
+		QuantityMeasurement tonne1 = new QuantityMeasurement(Weight.TONNE, 0.0);
+		QuantityMeasurement tonne2 = new QuantityMeasurement(Weight.TONNE, 1.0);
+		Assert.assertNotEquals(tonne1, tonne2);
+	}
+
+	@Test
+	public void givenType0TonneAnd1Tonne_ShouldReturnEqual() {
+		QuantityMeasurement tonne1 = new QuantityMeasurement(Weight.TONNE, 0.0);
+		QuantityMeasurement tonne2 = new QuantityMeasurement(Weight.TONNE, 1.0);
+		Assert.assertEquals(tonne1.getClass(), tonne2.getClass());
+	}
+
 }
