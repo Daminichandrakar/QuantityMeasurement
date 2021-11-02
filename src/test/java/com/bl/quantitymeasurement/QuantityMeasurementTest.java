@@ -438,4 +438,24 @@ public class QuantityMeasurementTest {
 		boolean compareCheck = millilitre.compare(litre);
 		Assert.assertTrue(compareCheck);
 	}
+
+	@Test
+	public void given1GallonAnd3Point78Litre_WhenAdded_ShouldReturn7Point57Litre() {
+		QuantityMeasurement gallon = new QuantityMeasurement(Volume.GALLON, 1.0);
+		QuantityMeasurement litre = new QuantityMeasurement(Volume.LITRE, 3.78);
+		double actualValue = gallon.addition(litre);
+		QuantityMeasurement qMeasurement = new QuantityMeasurement(Volume.LITRE, 7.56);
+		double expected = qMeasurement.value;
+		Assert.assertEquals(actualValue, expected, 0.0);
+	}
+
+	@Test
+	public void given1LitreAnd1000Millilitre_WhenAdded_ShouldReturn2Litre() {
+		QuantityMeasurement litre = new QuantityMeasurement(Volume.LITRE, 1.0);
+		QuantityMeasurement millilitre = new QuantityMeasurement(Volume.MILLILITRE, 1000.0);
+		double actualValue = litre.addition(millilitre);
+		QuantityMeasurement qMeasurement = new QuantityMeasurement(Volume.LITRE, 2.0);
+		double expected = qMeasurement.value;
+		Assert.assertEquals(actualValue, expected, 0.0);
+	}
 }

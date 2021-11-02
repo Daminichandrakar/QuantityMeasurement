@@ -46,7 +46,8 @@ public class QuantityMeasurement {
 		if (getClass() != obj.getClass())
 			return false;
 		QuantityMeasurement qMeasurement = (QuantityMeasurement) obj;
-		return Double.compare(qMeasurement.value, value) == 0 && lengthComparision.equals(qMeasurement.lengthComparision);
+		return Double.compare(qMeasurement.value, value) == 0
+				&& lengthComparision.equals(qMeasurement.lengthComparision);
 	}
 
 	/**
