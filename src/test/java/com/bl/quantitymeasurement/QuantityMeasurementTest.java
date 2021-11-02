@@ -277,4 +277,110 @@ public class QuantityMeasurementTest {
 		double result1 = qMeasurement.value;
 		Assert.assertEquals(result, result1, 0.0);
 	}
+
+	@Test
+	public void given0GallonAnd0Gallon_ShouldReturnEqual() {
+		QuantityMeasurement gallon1 = new QuantityMeasurement(Volume.GALLON, 0.0);
+		QuantityMeasurement gallon2 = new QuantityMeasurement(Volume.GALLON, 0.0);
+		Assert.assertEquals(gallon1, gallon2);
+	}
+
+	@Test
+	public void givenValue0GallonAnd1Gallon_ShouldReturnNotEqual() {
+		QuantityMeasurement gallon1 = new QuantityMeasurement(Volume.GALLON, 0.0);
+		QuantityMeasurement gallon2 = new QuantityMeasurement(Volume.GALLON, 1.0);
+		Assert.assertNotEquals(gallon1, gallon2);
+	}
+
+	@Test
+	public void given0GallonAndNullGallon_ShouldReturnNotEqual() {
+		QuantityMeasurement gallon1 = new QuantityMeasurement(Volume.GALLON, 0.0);
+		QuantityMeasurement gallon2 = null;
+		Assert.assertNotEquals(gallon1, gallon2);
+	}
+
+	@Test
+	public void givenReference0GallonAnd1Gallon_ShouldReturnNotEqual() {
+		QuantityMeasurement gallon1 = new QuantityMeasurement(Volume.GALLON, 0.0);
+		QuantityMeasurement gallon2 = new QuantityMeasurement(Volume.GALLON, 1.0);
+		Assert.assertNotEquals(gallon1, gallon2);
+	}
+
+	@Test
+	public void givenType0GallonAnd1Gallon_ShouldReturnEqual() {
+		QuantityMeasurement gallon1 = new QuantityMeasurement(Volume.GALLON, 0.0);
+		QuantityMeasurement gallon2 = new QuantityMeasurement(Volume.GALLON, 1.0);
+		Assert.assertEquals(gallon1.getClass(), gallon2.getClass());
+	}
+
+	@Test
+	public void given0LitreAnd0Litre_ShouldReturnEqual() {
+		QuantityMeasurement litre1 = new QuantityMeasurement(Volume.LITRE, 0.0);
+		QuantityMeasurement litre2 = new QuantityMeasurement(Volume.LITRE, 0.0);
+		Assert.assertEquals(litre1, litre2);
+	}
+
+	@Test
+	public void givenValue0LitreAnd1Litre_ShouldReturnNotEqual() {
+		QuantityMeasurement litre1 = new QuantityMeasurement(Volume.LITRE, 0.0);
+		QuantityMeasurement litre2 = new QuantityMeasurement(Volume.LITRE, 1.0);
+		Assert.assertNotEquals(litre1, litre2);
+	}
+
+	@Test
+	public void given0LitreAndNullLitre_ShouldReturnNotEqual() {
+		QuantityMeasurement litre1 = new QuantityMeasurement(Volume.LITRE, 0.0);
+		QuantityMeasurement litre2 = null;
+		Assert.assertNotEquals(litre1, litre2);
+	}
+
+	@Test
+	public void givenReference0LitreAnd1Litre_ShouldReturnNotEqual() {
+		QuantityMeasurement litre1 = new QuantityMeasurement(Volume.LITRE, 0.0);
+		QuantityMeasurement litre2 = new QuantityMeasurement(Volume.LITRE, 1.0);
+		Assert.assertNotEquals(litre1, litre2);
+	}
+
+	@Test
+	public void givenType0LitreAnd1Litre_ShouldReturnEqual() {
+		QuantityMeasurement litre1 = new QuantityMeasurement(Volume.LITRE, 0.0);
+		QuantityMeasurement litre2 = new QuantityMeasurement(Volume.LITRE, 1.0);
+		Assert.assertEquals(litre1.getClass(), litre2.getClass());
+	}
+
+	@Test
+	public void given0MillilitreAnd0Millilitre_ShouldReturnEqual() {
+		QuantityMeasurement millilitre1 = new QuantityMeasurement(Volume.MILLILITRE, 0.0);
+		QuantityMeasurement millilitre2 = new QuantityMeasurement(Volume.MILLILITRE, 0.0);
+		Assert.assertEquals(millilitre1, millilitre2);
+	}
+
+	@Test
+	public void givenValue0MillilitreAnd1Millilitre_ShouldReturnNotEqual() {
+		QuantityMeasurement millilitre1 = new QuantityMeasurement(Volume.MILLILITRE, 0.0);
+		QuantityMeasurement millilitre2 = new QuantityMeasurement(Volume.MILLILITRE, 1.0);
+		Assert.assertNotEquals(millilitre1, millilitre2);
+	}
+
+	@Test
+	public void given0MillilitreAndNullMillilitre_ShouldReturnNotEqual() {
+		QuantityMeasurement millilitre1 = new QuantityMeasurement(Volume.MILLILITRE, 0.0);
+		QuantityMeasurement millilitre2 = null;
+		Assert.assertNotEquals(millilitre1, millilitre2);
+	}
+
+	@Test
+	public void givenReference0MillilitreAnd1Millilitre_ShouldReturnNotEqual() {
+		QuantityMeasurement millilitre1 = new QuantityMeasurement(Volume.MILLILITRE, 0.0);
+		QuantityMeasurement millilitre2 = new QuantityMeasurement(Volume.MILLILITRE, 1.0);
+		Assert.assertNotEquals(millilitre1, millilitre2);
+	}
+
+	@Test
+	public void givenType0MillilitreAnd1Millilitre_ShouldReturnEqual() {
+		QuantityMeasurement millilitre1 = new QuantityMeasurement(Volume.MILLILITRE, 0.0);
+		QuantityMeasurement millilitre2 = new QuantityMeasurement(Volume.MILLILITRE, 1.0);
+		Assert.assertEquals(millilitre1.getClass(), millilitre2.getClass());
+	}
+
 }

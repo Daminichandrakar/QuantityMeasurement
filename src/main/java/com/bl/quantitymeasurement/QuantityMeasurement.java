@@ -1,5 +1,7 @@
 package com.bl.quantitymeasurement;
 
+import java.util.Objects;
+
 /**
  * Purpose : To simulate Quantity Measurement Program
  *
@@ -39,10 +41,12 @@ public class QuantityMeasurement {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null || getClass() != obj.getClass())
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
 			return false;
 		QuantityMeasurement qMeasurement = (QuantityMeasurement) obj;
-		return Double.compare(qMeasurement.value, value) == 0;
+		return Double.compare(qMeasurement.value, value) == 0 && lengthComparision.equals(qMeasurement.lengthComparision);
 	}
 
 	/**
