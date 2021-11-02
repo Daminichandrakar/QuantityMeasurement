@@ -383,4 +383,59 @@ public class QuantityMeasurementTest {
 		Assert.assertEquals(millilitre1.getClass(), millilitre2.getClass());
 	}
 
+	@Test
+	public void given0GallonAnd0Litre_WhenCompared_ShouldReturnEqualVolume() {
+		QuantityMeasurement gallon = new QuantityMeasurement(Volume.GALLON, 0.0);
+		QuantityMeasurement litre = new QuantityMeasurement(Volume.LITRE, 0.0);
+		boolean compareCheck = gallon.compare(litre);
+		Assert.assertTrue(compareCheck);
+	}
+
+	@Test
+	public void given0GallonAnd1Litre_WhenCompared_ShouldReturnNotEqualVolume() {
+		QuantityMeasurement gallon = new QuantityMeasurement(Volume.GALLON, 0.0);
+		QuantityMeasurement litre = new QuantityMeasurement(Volume.LITRE, 1.0);
+		boolean compareCheck = gallon.compare(litre);
+		Assert.assertFalse(compareCheck);
+	}
+
+	@Test
+	public void given1GallonAnd3Point78Litre_WhenCompared_ShouldReturnEqualVolume() {
+		QuantityMeasurement gallon = new QuantityMeasurement(Volume.GALLON, 1.0);
+		QuantityMeasurement litre = new QuantityMeasurement(Volume.LITRE, 3.78);
+		boolean compareCheck = gallon.compare(litre);
+		Assert.assertTrue(compareCheck);
+	}
+
+	@Test
+	public void given3Point78LitreAnd1Gallon_WhenCompared_ShouldReturnEqualVolume() {
+		QuantityMeasurement litre = new QuantityMeasurement(Volume.LITRE, 3.78);
+		QuantityMeasurement gallon = new QuantityMeasurement(Volume.GALLON, 1.0);
+		boolean compareCheck = litre.compare(gallon);
+		Assert.assertTrue(compareCheck);
+	}
+
+	@Test
+	public void given0LitreAnd0Millilitre_WhenCompared_ShouldReturnEqualVolume() {
+		QuantityMeasurement litre = new QuantityMeasurement(Volume.LITRE, 0.0);
+		QuantityMeasurement millilitre = new QuantityMeasurement(Volume.MILLILITRE, 0.0);
+		boolean compareCheck = litre.compare(millilitre);
+		Assert.assertTrue(compareCheck);
+	}
+
+	@Test
+	public void given1LitreAnd1000Millilitre_WhenCompared_ShouldReturnEqualVolume() {
+		QuantityMeasurement litre = new QuantityMeasurement(Volume.LITRE, 1.0);
+		QuantityMeasurement millilitre = new QuantityMeasurement(Volume.MILLILITRE, 1000.0);
+		boolean compareCheck = litre.compare(millilitre);
+		Assert.assertTrue(compareCheck);
+	}
+
+	@Test
+	public void given1000MillilitreAnd1Litre_WhenCompared_ShouldReturnEqualVolume() {
+		QuantityMeasurement millilitre = new QuantityMeasurement(Volume.MILLILITRE, 1000.0);
+		QuantityMeasurement litre = new QuantityMeasurement(Volume.LITRE, 1.0);
+		boolean compareCheck = millilitre.compare(litre);
+		Assert.assertTrue(compareCheck);
+	}
 }
